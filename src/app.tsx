@@ -1,5 +1,5 @@
 import { h, Component } from 'preact'
-
+import { Hero } from './Hero'
 export interface AppProps {
   name: string;
 }
@@ -11,7 +11,7 @@ export class App extends Component<AppProps, AppState> {
 
   constructor(props: AppProps) {
     super(props)
-    this.state = { name: props.name }
+    this.state = { name: props.name}
   }
 
   componentDidMount() {
@@ -23,6 +23,11 @@ export class App extends Component<AppProps, AppState> {
   }
 
   render(props: AppProps, state: AppState) {
-    return (<h1>props: {props.name} state: {state.name}</h1>)
+    return (
+      <div>
+        <Hero />
+      </div>
+
+    )
   }
 }
